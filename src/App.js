@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useState } from 'react'
+import Login from './components/Login'
+import Register from './components/Register'
+import {BrowserRouter as Router,Routes,Route,Navigate} from 'react-router-dom'
+import Home from './Pages/Home'
+import Lougout from './components/Lougout'
 function App() {
+  const[loggedIn,setLoggedIn]=useState(false)
+  const [registerd,setRegisterd]=useState(false)
+  const [userState,setUserState]=useState({
+    userName:"",
+    password:""
+  })
+  console.log(userState)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    
+      <div style={{textAlign: "center"}}>
+       
+       <Router>
+  <Routes>
+    <Route path="/Login" element={loggedIn ? <Navigate to="/" /> : <Login  setUserState={setUserState} setLoggedIn={setLoggedIn} />} />
+    <Route path="/register" element={registerd?<Navigate to ="/login"/>:<Register setRegisterd={setRegisterd} />} />
+    <Route path="/" element={userState&&loggedIn?<Home />:<Navigate to ="/Login"/>} />
+    <Route path="/logout" element={<Lougout setUserState={setUserState} setLoggedIn={setLoggedIn}/>} / >
+  </Routes>
+</Router>
 
-export default App;
+      </div>
+   
+  );
+  
+    }
+export default App

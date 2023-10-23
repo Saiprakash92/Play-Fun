@@ -1,0 +1,36 @@
+body{
+    background-color:blueviolet;
+}
+.container {
+    background-color: rgb(212, 212, 217);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    max-width: 400px;
+    border-radius: 10px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 40px;
+  }
+.login{
+    padding: 20px;
+    
+}
+.input{
+    padding: 5px;
+    margin: 7px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    background-color: beige;
+   color: black; 
+   font-weight: 300;
+}
+.my-element {
+    background-color: grey;
+    border-radius: 4px;
+    font-size: 20px;
+    padding: 2px;
+    margin: 5px;
+    cursor: pointer;
+  }

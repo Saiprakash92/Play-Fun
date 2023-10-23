@@ -1,10 +1,17 @@
 .App {
+  justify-content: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.todo-list {
+  list-style: none; /* Remove the default bullet point */
+  padding: 0; /* Remove any default padding */
+}
+
+.todo-list li {
+  display: flex; /* Use flexbox */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
 }
 
 @media (prefers-reduced-motion: no-preference) {
